@@ -1,0 +1,5 @@
+# 1. Force the desktop environment (UDisks2) to permanently ignore all USB partitions
+ACTION=="add", SUBSYSTEM=="block", ENV{ID_BUS}=="usb", ENV{UDISKS_IGNORE}="1"
+
+# 2. Trigger our log sync script only when a USB drive is plugged in/added
+ACTION=="add", KERNEL=="sd[a-z][0-9]", ENV{ID_BUS}=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", TAG+="systemd", ENV{SYSTEMD_WANTS}="usb-can-sync@%k.service"

@@ -677,8 +677,6 @@ Confidential and Proprietary
 
 Nikesh Jagadeesh Raikar
 
-LGEVG
-
 Android Logger Service
 
 Resilient Store-and-Forward Logging Framework for Android Validation Systems
